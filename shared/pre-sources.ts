@@ -102,8 +102,11 @@ export const originSources = {
   },
   "hupu": {
     name: "虎扑",
-    disable: true,
     home: "https://hupu.com",
+    column: "china",
+    title: "主干道热帖",
+    type: "hottest",
+    color: "red",
   },
   "tieba": {
     name: "百度贴吧",
@@ -139,8 +142,6 @@ export const originSources = {
   "sputniknewscn": {
     name: "卫星通讯社",
     color: "orange",
-    // cloudflare pages cannot access
-    disable: "cf",
     column: "world",
     home: "https://sputniknews.cn",
   },
@@ -271,6 +272,19 @@ export const originSources = {
         column: "china",
         type: "hottest",
       },
+      "hot-video": {
+        title: "热门视频",
+        disable: "cf",
+        column: "china",
+        type: "hottest",
+      },
+      "ranking": {
+        title: "排行榜",
+        column: "china",
+        disable: "cf",
+        type: "hottest",
+        interval: Time.Common,
+      },
     },
   },
   "kuaishou": {
@@ -304,13 +318,6 @@ export const originSources = {
     type: "hottest",
     home: "https://www.baidu.com",
   },
-  "nowcoder": {
-    name: "牛客",
-    column: "china",
-    color: "blue",
-    type: "hottest",
-    home: "https://www.nowcoder.com",
-  },
   "linuxdo": {
     name: "LINUX DO",
     column: "tech",
@@ -334,8 +341,62 @@ export const originSources = {
     name: "果核剥壳",
     column: "china",
     color: "yellow",
-    disable: "cf",
     home: "https://www.ghxi.com/",
+  },
+  "smzdm": {
+    name: "什么值得买",
+    column: "china",
+    color: "red",
+    type: "hottest",
+    home: "https://www.smzdm.com",
+  },
+  "nowcoder": {
+    name: "牛客",
+    column: "china",
+    color: "blue",
+    type: "hottest",
+    home: "https://www.nowcoder.com",
+  },
+  "sspai": {
+    name: "少数派",
+    column: "tech",
+    color: "red",
+    type: "hottest",
+    home: "https://sspai.com",
+  },
+  "juejin": {
+    name: "稀土掘金",
+    column: "tech",
+    color: "blue",
+    type: "hottest",
+    home: "https://juejin.cn",
+  },
+  "ifeng": {
+    name: "凤凰网",
+    column: "china",
+    color: "red",
+    type: "hottest",
+    title: "热点资讯",
+    home: "https://www.ifeng.com",
+  },
+  "chongbuluo": {
+    name: "虫部落",
+    column: "china",
+    color: "green",
+    home: "https://www.chongbuluo.com",
+    sub: {
+      latest: {
+        title: "最新",
+        interval: Time.Common,
+        home: "https://www.chongbuluo.com/forum.php?mod=guide&view=newthread",
+      },
+      hot: {
+        title: "最热",
+        type: "hottest",
+        interval: Time.Common,
+        home: "https://www.chongbuluo.com/forum.php?mod=guide&view=hot",
+      },
+    },
   },
 } as const satisfies Record<string, OriginSource>
 
